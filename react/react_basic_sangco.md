@@ -328,7 +328,7 @@ console.log('_mode', _mode);
 - `useState` 의 인자는 해당 state의 초깃값
 - `useState` 함수를 쓰면 `_mode` 변수를 state로 만들어줌
 - 콘솔 찍어보면 `_mode` 함수는 배열임
-- ![LeenaKim-3299858](react_생활코딩강좌.assets/LeenaKim-3299858.png)
+- ![LeenaKim-3299858](react_basic_sangco.assets/LeenaKim-3299858.png)
 
 - 0번째는 상태의 값을 읽을 때, 1번째 데이터는 그 상태의 값을 변경할 때 사용하는 함수 
 
@@ -553,7 +553,7 @@ export default App;
 
 ```
 
-![LeenaKim-6490517](react_생활코딩강좌.assets/LeenaKim-6490517.png)
+![LeenaKim-6490517](react_basic_sangco.assets/LeenaKim-6490517.png)
 
 - Create 버튼을 누르면 title과 body를 받아 내용에 추가하고 싶다. 
 - `{content}` 밑에 a태그로 `onClick` 펑션 추가. 다른 태그들이 `onChangeMode` 로 사용자 태그화 했던거랑 다르게 쌩 a 태그이므로 `onClick` 으로 함수 설정
