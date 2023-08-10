@@ -4,6 +4,8 @@
 
 [toc]
 
+<u>리액트</u>
+
 # 배경
 
 - SPA(Single Page Application - html 하나로만 어플리케이션 제작) : 비동기를 기본으로 함.
@@ -209,4 +211,69 @@ function AttendanceBook(props) {
     );
 };
 ```
+
+
+
+# Forms
+
+## Compositioin
+
+- 여러 개의 컴포넌트를 합쳐서 새로운 컴포넌트를 만드는 것
+
+1. Containment 
+
+- 하위 컴포넌트를 포함하는 형태의 합성 방법
+- Sidebar나 dialog 같은 box 형태의 컴포넌트는 자신의 하위 컴포넌트를 미리 알 수 없다. 
+- children이라는 prop을 사용해서 조합!
+
+2. specialization
+
+## Context
+
+- 세션과 같은 별도의 메모리 공간
+- 데이터를 공유해야 할 때 사용 ex) 로그인 여부, 로그인 정보, UI 테마, 현재 언어 등
+- 기존 props를 쓰던 방식보다 효율적이고 계속해서 props를 넘겨받지 않아도 됨
+- 단점 : 부모에서 렌더링하면 자식까지 영향을 받음. 
+
+
+
+# mini-blog 프로젝트
+
+```react
+npm install --save react-router-dom styled-components
+```
+
+- 패키지를 깔면 package.json 에 router과 styled-component가 설치된 것 확인 가능
+
+- 간단하게 생각 하자면 사용자가 요청한 URL에 따라 해당 URL에 맞는 페이지를 보여주는 것이라고 생각할 수 있다.
+- 라우터는 최상위인 `App.js` 에 들어가야 함
+
+- router가 있어야 화면에 대한 transition이 발생 가능 
+- `BrowserRouter` > `Routes` > `Route` 순서대로 감쌈
+- 실제 이동할 화면은 `Route` 에 걸음. path가 라우트에 걸려있어야 그 path를 이벤트에 등록할 수 있음
+
+```REACT
+function App(props) {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route index element={<MainPage/>}></Route>
+            </Routes>
+        </BrowserRouter>
+    );
+}
+```
+
+- `index` : = `path="index"` path의 이름을 index로 지정
+- `path` : request path
+
+- `path="post/:postId"` : path와 함께 값을 넘겨주고 싶을 때 사용
+
+```react
+const {comments} = props;
+```
+
+- 위처럼 props나 리액트 모듈에서 가져온 변수를 자바스크립트에 쓸때는 자바스크립트 변수로의 변환이 필요하기 때문에 중괄호가 필요하다.
+
+
 
