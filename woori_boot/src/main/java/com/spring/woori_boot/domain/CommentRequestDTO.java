@@ -5,8 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PostRequestDTO {
-    private String title;
+public class CommentRequestDTO {
     private String content;
-    private int id;
+    private int blog_id;
 }

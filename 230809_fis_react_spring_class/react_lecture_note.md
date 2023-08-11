@@ -74,7 +74,7 @@
 - 컴포넌트를 만들 때 아주 작은 소단위로 만들어 조합해야 한다.
 - Elements는 화면(Virtual DOM)에서 보이는 것들을 기술
 - 엘레먼트의 텍스트 내용 자체도 props의 children이다.
-- React elements are immutable : 기존의 element를 수정할 수 없고, 새 element를 만들어서 대체를 해야한다(render)
+- React elements are immutable : 기존의 element를 수정할 수 없고, **새 element를 만들어서 대체를 해야한다(render)**
 
 ## `Clock.jsx` 실습
 

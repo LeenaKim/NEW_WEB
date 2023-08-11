@@ -38,7 +38,9 @@ public class DBConfiguration {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource());
-		//factoryBean.setMapperLocations(context.getResources("classpath:/mappers/**/*Mapper.xml"));
+        // mappers 폴더 내, 그 하위폴더까지 xxxMapper.xml 파일은 다 factoryBean 에 등록하겠다
+        // classpath : resources 디렉토리 밑에 있는 것들
+		factoryBean.setMapperLocations(context.getResources("classpath:/mappers/**/*Mapper.xml"));
 		//factoryBean.setConfigLocation(context.getResource("classpath:/mybatis/mybatis-config.xml"));
         factoryBean.setConfiguration(mybatisConfig());
         
