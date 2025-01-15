@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- SQL 구문을 정의하는 영역 -->
+<mapper namespace="com.spring.woori_boot.mapper.PostMapper">
+    <insert id="save"
+            parameterType="com.spring.woori_boot.domain.PostRequestDTO">
+        INSERT INTO BLOG_TBL(TITLE, CONTENT) VALUES (
+                #{title}
+            ,   #{content}
+        )
+    </insert>
+    <!-- blog list -->
+    <select id="list"
+            resultType="com.spring.woori_boot.domain.PostResponseVO">
+        SELECT
+                ID
+            ,   TITLE
+            ,   CONTENT
+        FROM
+                BLOG_TBL
+    </select>
+
+    <!-- blog -->
+    <select id="view"
+            parameterType="com.spring.woori_boot.domain.PostRequestDTO"
+            resultType="com.spring.woori_boot.domain.PostResponseVO">
+        SELECT
+                ID
+            ,   TITLE
+            ,   CONTENT
+        FROM
+                BLOG_TBL
+        WHERE
+                ID = #{id}
+    </select>
+</mapper>
